@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    width: 100w;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #BF6C95;
+    color: black;
+    text-decoration: none;
+}
+
+/* Used for the navigation */
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0.6em;
+    grid-gap: 1.25em;
+    font-size: 15pt;
+}
+
+/* Hover state used for the navigation */
+
+a {
+    text-decoration: none;
+    color: black;
+    --b: 0.1em;   /* the thickness of the line */
+    --c: white; /* the color */
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+    linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+
+.about-me {
+    padding-left: 4em;
+    text-align: left;
+    color: white;
+    text-decoration: underline;
+}
+
+.home {
+    text-align: center;
+}
+
+.work {
+    text-align: right;
+    padding-right: 4em;
+}
+
+a:hover {
+    --_p: 100%;
+    --_s: .3s;
+}
+
+.bio-text {
+    font: 'Rubik', sans-serif;
+    padding: 1.25em;
+}
+
+.bio-text-container {
+    background-color: #fff;
+    border-radius: 1em;
+    line-break: auto;
+    margin-top: 3.5em;
+    margin-left: 5em;
+    text-align: left;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto repeat(5);
+    font: 'Rubik', sans-serif;
+    word-break: break-all;
+}
+
+.flex {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.card {
+    position: relative;
+    height: 11.875em;
+    background: #fff;
+    border-radius: 1.25em;
+    box-shadow: 0 2.1875em 5em rgba(0,0,0,0.15);
+    margin-top: 5em;
+    margin-left: 10em; 
+    width: 50%;
+}
+
+.image-box {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    left: -1.125em;
+    transform: translateX(-50%);
+    width: 9.375em;
+    height: 9.375;
+    border-radius: 1.25em;
+    box-shadow: 0 0.9375em 3.125 rgba(0,0,0,0.35);
+    overflow: hidden;
+    margin-top: 1em;
+}
+
+.image-box img {
+    width: 9.375em;
+    height: 9.375;
+    position: relative;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text {
+    line-break: strict;
+    margin-top: 3.5em;
+    margin-left: 5em;
+    text-align: left;
+}

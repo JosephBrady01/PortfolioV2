@@ -26,7 +26,7 @@ body{
     animation: 3s ease-out 0s 1 slideFromLeft;
 }
 
-
+/* This code is used to show the expansion of a section when hovered over */
 body:has(.welcome:hover) {
     grid-template-columns: 31.25em 29.875em 29.875em 29.875em;
     animation-delay: 0s;
@@ -47,7 +47,7 @@ body:has(.contact:hover) {
     animation-delay: 0s;
 }
 
-/*
+/* This is for the animation of the sections to fly in from the right */
 @keyframes slideFromLeft {
     0% {
         transform: translateX(200%);
@@ -56,24 +56,26 @@ body:has(.contact:hover) {
         transform: translateX(0);
     }
 }
-*/
+
 
 section{
     border-style: solid;
     border-right: none;
 }
 
+.bio-text, .work-text, .contact-text {
+    margin-top: 80%;
+}
+
 .contact {
     border-right: solid;
 }
 
+/* Welcome section */
+
 .welcome {
     text-align: center;
     background-color: #69A6D1;
-}
-
-.bio-text, .work-text, .contact-text {
-    margin-top: 80%;
 }
 
 .pp{
@@ -97,6 +99,8 @@ section{
     font-weight: 200;
 }
 
+/* Bio section */
+
 .bio {
     background-color: #BF6C95;
     position: static;
@@ -113,6 +117,8 @@ bio:hover {
     text-align: center;
     font-weight: 200; 
 }
+
+/* Button syle is used across the entire page */
 
 .see-more {
     background-color: #A1EAF2;
@@ -183,6 +189,8 @@ a #button-contact {
     margin-left: 25%;
 }
 
+/* Animation for the background images on the bio section*/
+
 @keyframes flowup {
 
     from {
@@ -196,6 +204,7 @@ a #button-contact {
     }
 }
 
+/* Work section */
 .work {
     background-color: #6667AB;
     z-index: 0;
@@ -214,6 +223,8 @@ a #button-contact {
     -moz-transition: opacity 1s ease-in-out;
     -webkit-transition: opacity 1s ease-in-out;
 }
+
+/* Simple hover state used for the work background images */
 
 .background-images {
     z-index: -1;
@@ -263,6 +274,8 @@ a #button-contact {
     -moz-transition: opacity .55s ease-in-out;
     -webkit-transition: opacity .55s ease-in-out;
 }
+
+/* Contact section */
 
 .contact {
     background-color: #355C7D;
