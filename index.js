@@ -1,0 +1,1 @@
+window.onload(alert('This website has not been optimisd for mobile just yet.'))
