@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #355C7D;
+    color: black;
+    text-decoration: none;
+}
+
+/* Used for the navigation */
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0.6em;
+    grid-gap: 1.25em;
+    font-size: 15pt;
+}
+
+/* Hover state used for the navigation */
+
+a {
+    text-decoration: none;
+    color: black;
+    --b: 0.1em;   /* the thickness of the line */
+    --c: white; /* the color */
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+    linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+    background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+
+.contact {
+    padding-right: 4em;
+    text-align: right;
+    color: white;
+    text-decoration: underline;
+}
+
+.home {
+    text-align: center;
+}
+
+.work {
+    text-align: left;
+    padding-left: 4em;
+}
+
+a:hover {
+    --_p: 100%;
+    --_s: .3s;
+}
+
+.icon-container {
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 5em;
+    align-content: center;
+    justify-content: center;
+}
+
+.icon-image {
+    height: 10em;
+    width: 10em;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.image {
+    height: 10em;
+    width: 10em;
+}
+
+.icon-image:hover {
+    transform: scale(1.1);
+    --_p: 0%;
+    --_s: 0%;
+    opacity: 100;
+}
