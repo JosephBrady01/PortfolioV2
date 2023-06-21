@@ -83,7 +83,7 @@ body:has(.contact:hover) {
 .bio {
     background-color: #BF6C95;
     top: 100vh;
-    z-index: 0;
+    z-index: 1;
     text-align: center;
 }
 
@@ -98,6 +98,7 @@ body:has(.contact:hover) {
     transition: all 0.5s ease-in-out 0ms;
     user-select: none;
     margin-top: 5em;
+    z-index: 1;
 }
 
 .see-more:hover {
@@ -132,7 +133,7 @@ body:has(.contact:hover) {
     justify-items: center;
 }
 
-.image-container:hover {
+.bio:hover .image-container {
     opacity: 1;
     transition: opacity 0.1s ease-in-out;
     -moz-transition: opacity 0.1s ease-in-out;
@@ -143,16 +144,19 @@ body:has(.contact:hover) {
 .flowimage {
     height: 4.357em;
     width: 4.357em;
+    z-index: -1;
 }
 
 @keyframes flowUp {
     0% {
         transform: translateY(400%);
         opacity: 0;
+        z-index: -1;
     }
     100% {
         transform: translateY(-300%);
         opacity: 1;
+        z-index: -1;
     }
 }
 
