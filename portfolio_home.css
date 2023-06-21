@@ -8,129 +8,96 @@
     box-sizing: border-box;
 }
 
-html{
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    width: 100%;
+    transition: 500ms;
+    animation: 3s ease-out 0s 1 slideLeft;
     overflow: hidden;
 }
 
-body{
-    color: #000000;
-    font-family: 'Ubuntu', sans-serif;
-    display: grid;
-    grid-template-columns: 30em 30em 30em 30em;
-    min-height: 100vh;
-    min-width: 100vw;
-    max-width: 100vw;
-    overflow-x: hidden;
-    transition: 500ms;
-    animation-delay: 0s;
-    animation: 3s ease-out 0s 1 slideFromLeft;
-}
-
-/* This code is used to show the expansion of a section when hovered over */
 body:has(.welcome:hover) {
-    grid-template-columns: 31.25em 29.875em 29.875em 29.875em;
-    animation-delay: 0s;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 }
 
 body:has(.bio:hover) {
-    grid-template-columns: 29.875em 31.25em 29.875em 29.875em;
-    animation-delay: 0s;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
 }
 
 body:has(.work:hover) {
-    grid-template-columns: 29.875em 29.875em 31.25em 29.875em;
-    animation-delay: 0s;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr;
 }
 
 body:has(.contact:hover) {
-    grid-template-columns: 29.875em 29.875em 29.875em 31.25em;
-    animation-delay: 0s;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
 }
 
-/* This is for the animation of the sections to fly in from the right */
-@keyframes slideFromLeft {
+
+@keyframes slideLeft {
     0% {
         transform: translateX(200%);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0)
     }
 }
 
 
-section{
-    border-style: solid;
+.welcome, .bio, .work, .contact {
+    border: black solid;
     border-right: none;
 }
 
-.bio-text, .work-text, .contact-text {
-    margin-top: 80%;
+.welcome-header, .bio-header, .work-header, .contact-header {
+    margin-top: 19.25em;
 }
-
-.contact {
-    border-right: solid;
-}
-
-/* Welcome section */
 
 .welcome {
-    text-align: center;
     background-color: #69A6D1;
+    text-align: center;
 }
 
 .pp{
-    width: 300px;
-    height: 300px;
-    position: center;
+    width: 18.75em;
+    height: 18.75em;
     margin-top: 10%;
 }
 
-.welcome_msg {
-    font-family: 'Rubik', sans-serif;
+.welcome-header {
+    font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    margin-top: 5%;
-    font-size: 24pt;
-    font-weight: 50000;
+    font-size: 16pt;
+    margin-top: 10%; 
 }
 
-.biline {
+.welcome-text {
+    font-family: 'Rubik', sans-serif;
     margin-top: 5%;
     font-size: 20pt;
     font-weight: 200;
 }
 
-/* Bio section */
-
 .bio {
     background-color: #BF6C95;
-    position: static;
     top: 100vh;
     z-index: 0;
-    transition: all .2s ease-in-out;
-}
-
-bio:hover {
-    transform: scale(1.1);
-}
-
-.bio-text {
     text-align: center;
-    font-weight: 200; 
 }
-
-/* Button syle is used across the entire page */
 
 .see-more {
     background-color: #A1EAF2;
-    margin-left: 30%;
-    height: 44px;
-    width: 190px;
+    height: 2.75em;
+    width: 11.875em;
     border-radius: 12pt;
     font-size: 16pt;
     box-shadow: 0px 0px 20px -20px;
     cursor: pointer;
     transition: all 0.5s ease-in-out 0ms;
     user-select: none;
+    margin-top: 5em;
 }
 
 .see-more:hover {
@@ -138,112 +105,87 @@ bio:hover {
     box-shadow: 0px 0px 20px -18px;
 }
 
-a {
-    height: 44px;
-    width: 190px;
-}
-
-a #button-bio {
-    margin-top: 22%
-}
-
-a #button-work {
-    margin-top: 16%;
-}
-
-a #button-contact {
-    margin-top: 10%;
-}
-
-.flowimages{
+.image-container {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    width: 500px;
-    height: 1080px;
-    position: absolute;
-    z-index: -1;
-
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100%;
     opacity: 0;
-
-    transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
 }
 
-.bio:hover .flowimages {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
+.bio-header {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
 }
 
-.flowimage{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    animation-name: flowup;
-    animation-duration: 20s;
-    animation-timing-function: linear;
+.flowimages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    animation: 10s ease-out flowUp;
+    z-index: -1;
     animation-iteration-count: infinite;
-    margin-left: 25%;
+    align-items: center;
+    justify-items: center;
 }
 
-/* Animation for the background images on the bio section*/
+.image-container:hover {
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
+}
 
-@keyframes flowup {
 
-    from {
-        margin-top: 100vh;
+.flowimage {
+    height: 4.357em;
+    width: 4.357em;
+}
+
+@keyframes flowUp {
+    0% {
+        transform: translateY(400%);
         opacity: 0;
     }
-
-    to {
-        margin-top: -65vh;
+    100% {
+        transform: translateY(-300%);
         opacity: 1;
     }
 }
 
-/* Work section */
+
 .work {
     background-color: #6667AB;
-    z-index: 0;
-}
-
-.work-text {
     text-align: center;
-    font-weight: 200;
-    transition: all .2s ease-in-out;
 }
 
-.work:hover .background-images {
-    display: grid;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -webkit-transition: opacity 1s ease-in-out;
+.work-header {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
 }
-
-/* Simple hover state used for the work background images */
 
 .background-images {
     z-index: -1;
     position: initial;
     display: gird;
-    grid-template-columns: 200px 200px;
-    margin-top: 10%;
-    margin-left: 10%;
-    grid-gap: 3em;
-    opacity: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10em;
     transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -webkit-transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    align-items: center;
+    justify-items: center;
+    margin-top: 5em;
 }
 
 .work-img1 {
-    margin-right: auto;
-    height: 300px;
-    width: 200px;
+    height: 18.75em;
+    width: 12.5em;
     opacity: 0.6;
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
@@ -252,8 +194,8 @@ a #button-contact {
 }
 
 .work-img2 {
-    height: 300px;
-    width: 160px;
+    height: 18.75;
+    width: 10em;
     opacity: 0.6;
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
@@ -262,26 +204,35 @@ a #button-contact {
 }
 
 .work-img1:hover {
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity .55s ease-in-out;
     -moz-transition: opacity .55s ease-in-out;
     -webkit-transition: opacity .55s ease-in-out;
 }
 
 .work-img2:hover {
-    opacity: 1.0;
+    opacity: 1;
     transition: opacity .55s ease-in-out;
     -moz-transition: opacity .55s ease-in-out;
     -webkit-transition: opacity .55s ease-in-out;
 }
 
-/* Contact section */
+.work:hover .background-images {
+    opacity: 1;
+    transition: opacity .55s ease-in-out;
+    -moz-transition: opacity .55s ease-in-out;
+    -webkit-transition: opacity .55s ease-in-out;
+}
 
 .contact {
     background-color: #355C7D;
+    border-right: black solid;
+    text-align: center;
 }
 
-.contact-text {
+.contact-header {
     text-align: center;
-    font-weight: 200; 
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
 }
