@@ -111,6 +111,7 @@ body:has(.contact:hover) {
     grid-template-rows: 1fr 1fr 1fr;
     height: 100%;
     opacity: 0;
+    z-index: -1;
 }
 
 .bio-header {
