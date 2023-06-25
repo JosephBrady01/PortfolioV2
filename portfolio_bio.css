@@ -63,6 +63,7 @@ a:hover {
 .bio-text {
     font: 'Rubik', sans-serif;
     padding: 1.25em;
+    text-align: center;
 }
 
 .bio-text-container {
@@ -70,8 +71,11 @@ a:hover {
     border-radius: 1em;
     line-break: auto;
     margin-top: 3.5em;
-    margin-left: 5em;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
+    width: 60%;
+
 }
 
 .card-container {
@@ -96,7 +100,7 @@ a:hover {
     box-shadow: 0 2.1875em 5em rgba(0,0,0,0.15);
     margin-top: 5em;
     margin-left: 10em; 
-    width: 50%;
+    width: 60%;
 }
 
 .image-box {
@@ -124,8 +128,103 @@ a:hover {
 }
 
 .card-text {
-    line-break: strict;
+    line-break: loose;
     margin-top: 3.5em;
     margin-left: 5em;
     text-align: left;
+    word-break: normal;
 }
+
+@media screen and (max-width: 59.375em) {
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        padding: none;
+        grid-gap: o;
+        text-align: center;
+    }
+
+    a{
+        font-size: 17pt;
+    }
+
+    .bio-text {
+        font-size: 11pt;
+    }
+
+    .about-me {
+        display: none;
+        padding: none;
+    }
+
+    .work {
+        padding-right: none;
+        text-align: center;
+    }
+
+    .bio-text-container {
+        text-align: center;
+        position: relative;
+    }
+
+    .card-container {
+        position: relative;
+        right: 4.5em;
+        place-items: center;
+    }
+
+    .flex {
+        margin-top: 5em;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .image-box {
+        bottom: 50%;
+        transform: translateY(-50%);
+        left: 50%;
+        transform: translateX(-50%);
+        top: -7.5em;
+    }
+
+    .card {
+        width: 100%;
+        margin-left: none;
+    }
+
+    .card-text {
+        text-align: center;
+        margin-left: 0;
+        font-size: 11pt;
+    }
+}
+
+@media screen and (max-width: 26.875em) { 
+    * {
+        font-size: 8pt;
+    }
+
+    .bio-text {
+        font-size: 10pt;
+    }
+
+    .card-text {
+        font-size: 8pt;
+    }
+}
+
+@media screen and (max-width:23.75em) { 
+    * {
+        font-size: 5pt;
+    }
+
+    .bio-text {
+        font-size: 8pt;
+    }
+
+    .card-text {
+        font-size: 5.7pt;
+    }
+}
+
