@@ -173,62 +173,6 @@ body:has(.contact:hover) {
     font-size: 16pt;
 }
 
-.background-images {
-    z-index: -1;
-    position: initial;
-    display: gird;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10em;
-    transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    opacity: 0;
-    align-items: center;
-    justify-items: center;
-    margin-top: 5em;
-}
-
-.work-img1 {
-    height: 18.75em;
-    width: 12.5em;
-    opacity: 0.6;
-    transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -webkit-transition: opacity 1s ease-in-out;
-    position: relative;
-}
-
-.work-img2 {
-    height: 18.75;
-    width: 10em;
-    opacity: 0.6;
-    transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -webkit-transition: opacity 1s ease-in-out;
-    position: relative;
-}
-
-.work-img1:hover {
-    opacity: 1;
-    transition: opacity .55s ease-in-out;
-    -moz-transition: opacity .55s ease-in-out;
-    -webkit-transition: opacity .55s ease-in-out;
-}
-
-.work-img2:hover {
-    opacity: 1;
-    transition: opacity .55s ease-in-out;
-    -moz-transition: opacity .55s ease-in-out;
-    -webkit-transition: opacity .55s ease-in-out;
-}
-
-.work:hover .background-images {
-    opacity: 1;
-    transition: opacity .55s ease-in-out;
-    -moz-transition: opacity .55s ease-in-out;
-    -webkit-transition: opacity .55s ease-in-out;
-}
-
 .contact {
     background-color: #355C7D;
     border-right: black solid;

@@ -74,6 +74,12 @@ a:hover {
  border-radius: 3em;
 }
 
+.other-work {
+  margin-top: 2em;
+  background-color: #fff;
+  border-radius: 3em;
+}
+
 h2, p {
  line-break: strict;
  margin-top: 1em;
@@ -249,7 +255,8 @@ img {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: black;
+  border: solid black;
+  border-radius: 1em;;
 }
 
 /* Caption text */
